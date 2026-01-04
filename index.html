@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niki's House | Γούρνες Ηρακλείου</title>
+    <meta name="description" content="Niki's House στις Γούρνες Ηρακλείου. Οδηγίες πρόσβασης από το αεροδρόμιο Ηρακλείου και κρατήσεις μέσω Airbnb/Booking.">
+    
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        header { background: #2c3e50; color: white; padding: 1rem; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        
+        .container { padding: 100px 20px 20px; max-width: 1000px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        
+        /* Slider */
+        .slider-container { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 10px; margin-bottom: 30px; }
+        .slide { display: none; width: 100%; height: 100%; object-fit: cover; }
+        .active { display: block; }
+
+        /* Buttons */
+        .booking-buttons { display: flex; gap: 15px; justify-content: center; margin: 30px 0; flex-wrap: wrap; }
+        .btn { padding: 15px 25px; text-decoration: none; color: white; border-radius: 5px; font-weight: bold; transition: 0.3s; text-align: center; min-width: 200px; }
+        .airbnb { background: #FF5A5F; }
+        .booking { background: #003580; }
+        .maps-btn { background: #34a853; }
+        .btn:hover { opacity: 0.8; transform: scale(1.05); }
+
+        /* Map Section */
+        .map-section { margin-top: 40px; border-top: 2px solid #eee; padding-top: 20px; }
+        .map-responsive { overflow:hidden; padding-bottom:56.25%; position:relative; height:0; border-radius: 10px; }
+        .map-responsive iframe { left:0; top:0; height:100%; width:100%; position:absolute; border:0; }
+
+        footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Niki's House - Gournes</h1>
+</header>
+
+<div class="container">
+    <div class="slider-container">
+        <img class="slide active" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80" alt="Living Room">
+        <img class="slide" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Bedroom">
+    </div>
+
+    <section id="about">
+        <h2>Καλώς ήλθατε!</h2>
+        <p>Το <strong>Nikis house</strong> βρίσκεται στην οδό Ιωσήφ Χατζηδάκη στις Γούρνες. Μια ιδανική τοποθεσία για να εξερευνήσετε το Ηράκλειο και την Κρήτη.</p>
+    </section>
+
+    <section class="booking-buttons">
+        <a href="https://www.airbnb.com/your-link" target="_blank" class="btn airbnb">Κράτηση μέσω Airbnb</a>
+        <a href="https://www.booking.com/your-link" target="_blank" class="btn booking">Κράτηση μέσω Booking.com</a>
+    </section>
+
+    <section class="map-section">
+        <h3>Πώς θα έρθετε από το Αεροδρόμιο</h3>
+        <p>Η διαδρομή από το Αεροδρόμιο Ηρακλείου (HER) είναι περίπου 15 λεπτά μέσω της Εθνικής Οδού.</p>
+        
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d51924.4754388657!2d25.18435764052345!3d35.32386975284347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x149a5f4640000001%3A0x9b99fcda10e2ae22!2sHeraklion%20International%20Airport%20N.%20Kazantzakis!3m2!1d35.3395461!2d25.1760645!4m5!1s0x149a5d7848d2468b%3A0x1c3790dc6aa14156!2sNikis%20house%2C%20Iosif%20Chatzidaki%2C%20Gournes%2C%20Greece!3m2!1d35.3220028!2d25.2800816!5e0!3m2!1sen!2sgr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="booking-buttons">
+            <a href="https://www.google.com/maps/dir/Heraklion+International+Airport+N.+Kazantzakis/Nikis+house,+Iosif+Chatzidaki,+Gournes" target="_blank" class="btn maps-btn">Άνοιγμα στους Χάρτες (GPS)</a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Niki's House | Τηλ: +30 693 668 6642</p>
+</footer>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 3000);
+</script>
+
+</body>
+</html>
